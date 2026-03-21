@@ -8,7 +8,7 @@ export default function FlowerAnimation() {
   const { currentLyric, showTitle } = useLyrics(audioRef);
 
   
-  const fullText = "Pensabas que hoy sería un día cualquiera... pero alguien no dejaba de pensar en ti. ✨\\n\\nDicen que las flores amarillas traen suerte, pero la verdadera suerte la tengo yo por coincidir contigo. 💛\\n\\nSé que la U y tanto trabajo te tienen estresada, pero quiero que este pequeño jardín te recuerde algo importante: tu luz nunca se apaga. 🌟\\n\\nGracias por iluminar mis días, bollito hermoso 🐰💕. Este detalle es tuyo, porque la niña más hermosa del mundo siempre merece sonreír. 🏆🌼";
+  const fullText = "Pensabas que hoy sería un día cualquiera... pero alguien no dejaba de pensar en ti. ✨\n\nDicen que las flores amarillas traen suerte, pero la verdadera suerte la tengo yo por coincidir contigo. 💛\n\nSé que la U y tanto trabajo te tienen estresada, pero quiero que este pequeño jardín te recuerde algo importante: tu luz nunca se apaga. 🌟\n\nGracias por iluminar mis días, bollito hermoso 🐰💕. Este detalle es tuyo, porque la niña más hermosa del mundo siempre merece sonreír. 🏆🌼";
   const [typedText, setTypedText] = useState("");
 
   useEffect(() => {
