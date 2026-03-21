@@ -10,7 +10,16 @@
     <title>Flores Amarillas 🌻</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Pantalla de carga mientras se descarga React y el MP3 -->
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background: #0c0d13; color: #ffcc00; font-family: sans-serif; text-align: center;">
+        <div class="spinner" style="width: 50px; height: 50px; border: 5px solid rgba(255,204,0,0.3); border-radius: 50%; border-top-color: #ffcc00; animation: spin 1s ease-in-out infinite;"></div>
+        <h2 style="margin-top: 20px; font-weight: normal; letter-spacing: 1px;">Preparando una sorpresa mágica... 🌻✨</h2>
+        <style>
+          @keyframes spin { to { transform: rotate(360deg); } }
+        </style>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
