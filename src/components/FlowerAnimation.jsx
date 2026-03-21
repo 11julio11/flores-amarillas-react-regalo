@@ -8,7 +8,7 @@ export default function FlowerAnimation() {
   const { currentLyric, showTitle } = useLyrics(audioRef);
 
   
-  const fullText = "🌻✨ Dicen que las flores amarillas traen suerte… pero yo sé que contigo ya la tengo toda. 💛 Aunque la U te estrese, tu brillo nunca se apaga 🌟.\n\nGracias por iluminar mis días, bollito hermoso 🐰💕. Este detalle es tuyo, porque ser la más hermosa del mundo merece premio 🏆🌼.";
+  const fullText = "🌻✨ Dicen que las flores amarillas traen suerte… pero yo sé que contigo ya la tengo toda. 💛 Aunque la U te estrese por mucho trabajo, tu brillo nunca se apaga 🌟.\n\nGracias por iluminar mis días, bollito hermoso 🐰💕. Este detalle es tuyo, porque ser la más hermosa del mundo merece premio 🏆🌼.";
   const [typedText, setTypedText] = useState("");
 
   useEffect(() => {
