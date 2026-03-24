@@ -1865,3 +1865,78 @@ h1 {
 .flower:hover {
   filter: brightness(1.5) drop-shadow(0 0 20px #ffea00);
 }
+
+/* =========================================================
+   ⚡ OPTIMIZACIÓN DE RENDIMIENTO (HARDWARE ACCELERATION)
+   ========================================================= */
+.flower, .flower__leafs, .flower__leaf, .flower__line, .flower__line__leaf, 
+.flower__grass, .flower__grass__leaf, .flower__light, .night,
+.firefly, .petal, .shooting-star, .titulo {
+  will-change: transform, opacity, filter;
+}
+
+/* =========================================================
+   📱 DISEÑO RESPONSIVO Y RENDIMIENTO MÓVIL
+   ========================================================= */
+@media screen and (max-width: 768px) {
+  /* Escalar y reubicar las flores para que encajen perfecto en celular */
+  .flowers {
+    transform: scale(0.5) translateY(10%);
+    margin-bottom: 15%;
+  }
+  
+  /* Ajustar el texto para que no se salga de la pantalla */
+  .titulo {
+    font-size: 1.1rem;
+    margin-bottom: 250px;
+    letter-spacing: 2px;
+    padding: 0 20px;
+    width: 100%;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.9);
+  }
+
+  /* Reducir un 50% de luciérnagas y pétalos en celular para no trabar el dispositivo */
+  .fireflies .firefly:nth-child(even),
+  .petals .petal:nth-child(even) {
+    display: none;
+  }
+
+  /* Reducir efectos pesados en celular (cálculos de blur muy grandes) */
+  .flower__leafs::after {
+    filter: blur(5vmin); /* Menor blur para ahorrar CPU */
+  }
+
+  .night {
+    filter: blur(0px); /* El fondo no necesita blur completo en celular */
+  }
+  
+  /* Adaptar el tamaño de pantalla inicial */
+  .greeting-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  .greeting-content {
+    padding: 1.5rem 1rem;
+    width: 95%;
+  }
+  .btn-surprise {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  /* Las flores extra agregadas que estaban a los lados, acercarlas un poquito */
+  .flower--12 { left: 20%; transform: scale(0.8) rotate(-10deg); }
+  .flower--15 { left: 80%; transform: scale(0.8) rotate(-25deg); }
+  .flower--16 { left: 10%; transform: scale(0.8) rotate(30deg); }
+}
+
+@media screen and (max-width: 400px) {
+  .flowers {
+    transform: scale(0.4) translateY(20%);
+    margin-bottom: 20%;
+  }
+  .titulo {
+    font-size: 0.95rem;
+    margin-bottom: 300px;
+  }
+}
