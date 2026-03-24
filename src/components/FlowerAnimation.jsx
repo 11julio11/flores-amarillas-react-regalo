@@ -2,6 +2,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useLyrics } from '../hooks/useLyrics';
 import '../assets/css/main.css';
+import QuizModal from './QuizModal';
 
 export default function FlowerAnimation() {
   const audioRef = useRef(null);
@@ -11,13 +12,38 @@ export default function FlowerAnimation() {
   const fullText = "Pensabas que hoy sería un día cualquiera... pero alguien no dejaba de pensar en ti. ✨\n\nDicen que las flores amarillas traen suerte, pero la verdadera suerte la tengo yo por coincidir contigo. 💛\n\nSé que la U y tanto trabajo te tienen estresada, pero quiero que este pequeño jardín te recuerde algo importante: tu luz nunca se apaga. 🌟\n\nGracias por iluminar mis días, bollito hermoso 🐰💕. Este detalle es tuyo, porque la niña más hermosa del mundo siempre merece sonreír. 🏆🌼";
   const [typedText, setTypedText] = useState("");
 
+  const [showQuiz, setShowQuiz] = useState(false);
+  const [fullyTyped, setFullyTyped] = useState(false);
+
+  // Sparkles click handler
+  useEffect(() => {
+    const handleGlobalClick = (e) => {
+      // Create explosion of 8 sparkles
+      for (let j = 0; j < 8; j++) {
+        const spark = document.createElement('div');
+        spark.className = 'sparkle';
+        spark.style.left = e.clientX + 'px';
+        spark.style.top = e.clientY + 'px';
+        const angle = (Math.PI * 2 * j) / 8;
+        const radius = 60 + Math.random() * 40;
+        spark.style.setProperty('--tx', Math.cos(angle) * radius + 'px');
+        spark.style.setProperty('--ty', Math.sin(angle) * radius + 'px');
+        document.body.appendChild(spark);
+        setTimeout(() => spark.remove(), 800);
+      }
+    };
+    window.addEventListener('click', handleGlobalClick);
+    return () => window.removeEventListener('click', handleGlobalClick);
+  }, []);
+
+
   useEffect(() => {
     if (showTitle) {
       let i = 0;
       const interval = setInterval(() => {
         setTypedText(fullText.slice(0, i));
         i++;
-        if (i > fullText.length) clearInterval(interval);
+        if (i > fullText.length) { setFullyTyped(true); clearInterval(interval); }
       }, 35);
       return () => clearInterval(interval);
     }
@@ -38,6 +64,15 @@ export default function FlowerAnimation() {
           ))}
         </h1>
       )}
+
+      {showTitle && fullyTyped && !showQuiz && (
+        <button className="btn-gran-final" onClick={(e) => { e.stopPropagation(); setShowQuiz(true); }}>
+          Test Mágico de Conexión ✨
+        </button>
+      )}
+      
+      {showQuiz && <QuizModal onClose={() => setShowQuiz(false)} />}
+
 
 
       <div className="night"></div>
