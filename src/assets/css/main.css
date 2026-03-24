@@ -1938,5 +1938,9 @@ h1 {
   .titulo {
     font-size: 0.95rem;
     margin-bottom: 300px;
+    padding: 0 25px;
+    box-sizing: border-box;
+    width: 100vw;
+    line-height: 1.8;
   }
 }
