@@ -11,7 +11,7 @@ const questions = [
 
 export default function QuizModal({ onClose }) {
   const [currentQ, setCurrentQ] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(15);
+  const [timeLeft, setTimeLeft] = useState(25);
   const [answers, setAnswers] = useState({});
   const [finished, setFinished] = useState(false);
 
@@ -31,7 +31,7 @@ export default function QuizModal({ onClose }) {
 
     if (currentQ < questions.length - 1) {
       setCurrentQ(currentQ + 1);
-      setTimeLeft(15);
+      setTimeLeft(25);
       setTimeout(() => {
         if(document.getElementById('ans-input')) document.getElementById('ans-input').value = '';
       }, 0);
