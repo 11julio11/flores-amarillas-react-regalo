@@ -1,8 +1,7 @@
 
-/* Quiz Modal y Botón Final */
 .btn-gran-final {
   position: absolute;
-  top: 60%;
+  top: 85%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1rem 2.5rem;

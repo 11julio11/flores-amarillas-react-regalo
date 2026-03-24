@@ -51,7 +51,7 @@ export default function QuizModal({ onClose }) {
   return (
     <div className="quiz-overlay">
       <div className="quiz-modal">
-        <h2 className="quiz-title">El Test de Conexión 🏜️💧.✨</h2>
+        <h2 className="quiz-title">Responde rápido mi oasis 🏜️💧✨</h2>
         
         {!finished ? (
           <div className="quiz-body">
