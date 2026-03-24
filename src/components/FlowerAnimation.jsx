@@ -67,7 +67,7 @@ export default function FlowerAnimation() {
 
       {showTitle && fullyTyped && !showQuiz && (
         <button className="btn-gran-final" onClick={(e) => { e.stopPropagation(); setShowQuiz(true); }}>
-          Test Mágico de Conexión ✨
+          Responde rápido mi oasis ✨
         </button>
       )}
       
